@@ -6,23 +6,19 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class AmigosHelper  extends SQLiteOpenHelper {
+public class AmigosHelper extends SQLiteOpenHelper {
 
-    //Constructor
 
-    public AmigosHelper(@Nullable Context context, @Nullable String name,
-                        @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public AmigosHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
     @Override
-
-    //Crea la tabla amigos clave (nombre) valor (teléfono)
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String creaBBDD="CREATE TABLE amigos (id INTEGER PRIMARY KEY AUTOINCREMENT " +
-                "NOT NULL, nombre TEXT,telefono TEXT)";
+        String creaBBDD="CREATE TABLE amigos(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT,telefono TEXT,email TEXT)";
         sqLiteDatabase.execSQL(creaBBDD);
-
+        String sql = "INSERT INTO amigos values (null, 'Tao','614561654','tao@tao.es')";
+        sqLiteDatabase.execSQL(sql);
     }
 
     @Override
