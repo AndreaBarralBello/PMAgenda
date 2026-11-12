@@ -1,6 +1,5 @@
-package com.example.agenda.Amigos;
+package com.example.agenda_amigos.amigos;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,27 +39,6 @@ public class AmigosAdaptador extends RecyclerView.Adapter <AmigosAdaptador.ViewH
 
     }
 
-    holder.itemBorrar.seOnClickListener(new view.OnClickListener){
-
-        @Override
-                public void onClick (View view){
-
-            Intent intent = new Intent (view.getContext(), A)
-
-
-        }
-    }
-
-    holder.itemEditar.seOnClickListener(new View.OnClickListener){
-        @Override
-        public void onClick(View view){
-
-            Intent intent = new Intent(view.getContext(), AmigosEditar.class);
-            intent.putExtra("id", amigo.getId());
-            view.getContext().startAcvitiy(intent);
-        }
-    }
-
     @Override
     public int getItemCount() {
         return listaAmigos.size();
@@ -82,4 +60,3 @@ public class AmigosAdaptador extends RecyclerView.Adapter <AmigosAdaptador.ViewH
         }
     }
 }
-
