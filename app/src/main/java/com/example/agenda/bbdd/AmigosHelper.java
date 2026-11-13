@@ -30,6 +30,7 @@ public class AmigosHelper extends SQLiteOpenHelper {
         String sql = "INSERT INTO amigos values (null, 'Tao','614561654','tao@tao.es')";
         sqLiteDatabase.execSQL(sql);
     }
+    https://chat.deepseek.com/share/f5vppbvk9ldh85xfuk
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
