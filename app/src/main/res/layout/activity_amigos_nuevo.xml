@@ -35,6 +35,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Añadir"
-        tools:layout_editor_absoluteX="268dp"
-        tools:layout_editor_absoluteY="410dp" />
+        tools:layout_editor_absoluteX="294dp"
+        tools:layout_editor_absoluteY="594dp" />
+
+    <EditText
+        android:id="@+id/etInstagram"
+        android:layout_width="363dp"
+        android:layout_height="65dp"
+        android:ems="10"
+        android:hint="Introduce el instagram"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="447dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

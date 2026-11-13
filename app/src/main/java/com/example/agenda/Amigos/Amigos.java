@@ -16,8 +16,9 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.agenda.Amigo;
 import com.example.agenda.R;
+import com.example.agenda.Amigo;
+
 import com.example.agenda.bbdd.AmigosHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -52,7 +53,7 @@ public class Amigos extends AppCompatActivity {
         cargaDatosSQLite(this);
 
         rvAmigos.setLayoutManager(new LinearLayoutManager(this));
-        AmigosAdaptador amigosAdaptador = new AmigosAdaptador(listaAmigos);
+        com.example.agenda_amigos.amigos.AmigosAdaptador amigosAdaptador = new com.example.agenda_amigos.amigos.AmigosAdaptador(listaAmigos);
         rvAmigos.setAdapter(amigosAdaptador);
 
         fabAnadir.setOnClickListener(new View.OnClickListener() {

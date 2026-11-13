@@ -1,4 +1,4 @@
-package com.example.agenda.Amigos;
+package com.example.agenda.amigos;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.agenda.Amigo;
+import com.example.agenda.Amigos.AmigosEditar;
 import com.example.agenda.R;
 
 import java.util.List;
@@ -38,27 +39,34 @@ public class AmigosAdaptador extends RecyclerView.Adapter <AmigosAdaptador.ViewH
         holder.tvNombre.setText(amigo.getNombre());
         holder.tvTelefono.setText(amigo.getTelefono());
 
-    }
 
-    holder.itemBorrar.seOnClickListener(new view.OnClickListener){
-
-        @Override
-                public void onClick (View view){
-
-            Intent intent = new Intent (view.getContext(), A)
+        //Añadimos el click al botón de borrar
+        holder.ivBorrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
 
-        }
-    }
+                listaAmigos.remove(position);
+                notifyItemRemoved(position);
+                notifyItemRangeChanged(position, listaAmigos.size());
 
-    holder.itemEditar.seOnClickListener(new View.OnClickListener){
-        @Override
-        public void onClick(View view){
+            }
 
-            Intent intent = new Intent(view.getContext(), AmigosEditar.class);
-            intent.putExtra("id", amigo.getId());
-            view.getContext().startAcvitiy(intent);
-        }
+
+            //botón Editar
+            holder.btnEditar.setOnClickListener(new View.OnClickListener(){
+                @Override
+                        public void onClick(View view){
+                    Intent intent = new Intent(context, AmigosEditar.class);
+                    intent.putExtra("id", String.valueOf(amigo.getId()));
+
+                    context.startActivity(intent);
+                }
+
+            }
+
+
+        });
     }
 
     @Override

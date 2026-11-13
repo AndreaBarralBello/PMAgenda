@@ -25,6 +25,8 @@ public class AmigosNuevo extends AppCompatActivity {
     EditText etEmail;
     Button btnAnadir;
 
+    EditText etInstagram;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class AmigosNuevo extends AppCompatActivity {
         etTelefono = findViewById(R.id.etTelefono);
         etEmail = findViewById(R.id.etEmail);
         btnAnadir = findViewById(R.id.btnAnadir);
+        etInstagram= findViewById(R.id.etInstagram);
 
         btnAnadir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +75,7 @@ public class AmigosNuevo extends AppCompatActivity {
             valores.put("nombre", etNombre.getText().toString());
             valores.put("telefono", etTelefono.getText().toString());
             valores.put("email", etEmail.getText().toString());
+            valores.put("instagram", etInstagram.getText().toString());
 
             db.insert("amigos", null, valores);
             db.close();

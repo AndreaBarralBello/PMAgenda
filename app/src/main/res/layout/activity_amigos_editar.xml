@@ -1,45 +1,79 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/main"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".Amigos.AmigosEditar">
 
     <EditText
         android:id="@+id/etNombreEditar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="111dp"
         android:ems="10"
         android:hint="Introduce el nombre"
         android:inputType="text"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="111dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etTelefonoEditar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
         android:ems="10"
         android:hint="Introduce el telefono"
         android:inputType="phone"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="201dp" />
+        app:layout_constraintStart_toStartOf="@+id/etNombreEditar"
+        app:layout_constraintTop_toBottomOf="@+id/etNombreEditar" />
 
     <EditText
         android:id="@+id/etEmailEditar"
-        android:layout_width="379dp"
+        android:layout_width="0dp"
         android:layout_height="69dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Introduce el email"
         android:inputType="textEmailAddress"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="295dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTelefonoEditar" />
 
     <Button
         android:id="@+id/btnEditar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="94dp"
         android:text="Editar"
-        tools:layout_editor_absoluteX="268dp"
-        tools:layout_editor_absoluteY="410dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etInstagramEditar" />
+
+    <Button
+        android:id="@+id/btnVovler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="103dp"
+        android:text="VOLVER"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etInstagramEditar"
+        android:layout_width="336dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginBottom="234dp"
+        android:ems="10"
+        android:hint="Introduce el instagram"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
