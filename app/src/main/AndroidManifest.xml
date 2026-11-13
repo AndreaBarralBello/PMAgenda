@@ -29,6 +29,10 @@
             android:name=".Amigos.AmigosEditar"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Amigos.AmigosVer"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

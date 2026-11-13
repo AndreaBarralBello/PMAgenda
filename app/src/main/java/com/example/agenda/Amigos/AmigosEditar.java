@@ -24,6 +24,8 @@ public class AmigosEditar extends AppCompatActivity {
     EditText etTelefonoEditar;
     EditText etEmailEditar;
     Button btnEditar;
+    Button btnVolver;
+    EditText etInstagramEditar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,31 +43,36 @@ public class AmigosEditar extends AppCompatActivity {
         etEmailEditar= findViewById(R.id.etEmailEditar);
         etTelefonoEditar= findViewById(R.id.etTelefonoEditar);
         btnEditar= findViewById(R.id.btnEditar);
+        etInstagramEditar = findViewById(R.id.etInstagramEditar);
+        //btnVolver= findViewById(R.id.btnVolver);
 
 
 
         Intent intent = getIntent();
         String itemID = intent.getStringExtra("id");
 
-        SQLiteDatabase db= new AmigosHelper(this, "amigos.db", null,1 ).getReadableDatabase();
+        SQLiteDatabase db= new AmigosHelper(this, "amigos.db", null,2 ).getReadableDatabase();
         Cursor cursor= db.rawQuery
-                        ("SELECT nombre, telefono, email FROM amigos WHERE id="+itemID, null);
+                        ("SELECT nombre, telefono, email, instagram FROM amigos WHERE id="+itemID, null);
         cursor.moveToNext();
         etNombreEditar.setText(cursor.getString(0));
         etTelefonoEditar.setText(cursor.getString(1));
         etEmailEditar.setText(cursor.getString(2));
+        etInstagramEditar.setText(cursor.getString(3));
+
 
 
         btnEditar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View view){
 
-                SQLiteDatabase db= new AmigosHelper(getBaseContext(), "amigos.db", null, 1)
+                SQLiteDatabase db= new AmigosHelper(getBaseContext(), "amigos.db", null, 2)
                 .getWritableDatabase();
                 ContentValues valores = new ContentValues();
                 String[] filtro={itemID};
                 valores.put("nombre", etNombreEditar.getText().toString());
                 valores.put("telefono", etTelefonoEditar.getText().toString());
+                valores.put("instagram", etInstagramEditar.getText().toString());
 
                 db.update("amigos", valores, "id=?", filtro);
                 db.close();
